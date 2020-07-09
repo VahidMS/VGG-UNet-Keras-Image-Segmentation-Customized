@@ -41,7 +41,7 @@ def _unet(n_classes, encoder, l1_skip_conn=True, input_height=416,
 
     o = Conv2D(n_classes, (3, 3), padding='same', data_format=IMAGE_ORDERING)(o)
 
-    # ups_layer = keras.layers.UpSampling2D(size=(2, 2), name="Vahid_Ups", data_format=IMAGE_ORDERING)
+    # ups_layer = keras.layers.UpSampling2D(size=(2, 2), name="simple_upsample", data_format=IMAGE_ORDERING)
     # o = ups_layer(o)
     trans_conv = Conv2DTranspose(n_classes, kernel_size=(2,2), strides=(2,2), padding='same', data_format=IMAGE_ORDERING)
     o = trans_conv(o)
